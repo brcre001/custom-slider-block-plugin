@@ -1,0 +1,25 @@
+{
+    "apiVersion": 2,
+    "name": "ctsb/text-image-slider",
+    "title": "Text Image Slider",
+    "category": "widgets",
+    "icon": "images-alt2",
+    "description": "A two-column slider with text and images.",
+    "supports": {
+      "html": false
+    },
+    "attributes": {
+      "slides": {
+        "type": "array",
+        "default": []
+      },
+      "textOnLeft": {
+        "type": "boolean",
+        "default": true
+      }
+    },
+    "editorScript": "file:./index.js",
+    "editorStyle": "file:./editor.css",
+    "style": "file:./style.css"
+  }
+  
