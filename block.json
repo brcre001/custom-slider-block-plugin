@@ -1,7 +1,7 @@
 {
     "apiVersion": 2,
     "name": "ctsb/text-image-slider",
-    "title": "Text Image Slider",
+    "title": "Brandon's Text & Image Slider",
     "category": "widgets",
     "icon": "images-alt2",
     "description": "A two-column slider with text and images.",
@@ -18,8 +18,8 @@
         "default": true
       }
     },
-    "editorScript": "file:./index.js",
-    "editorStyle": "file:./editor.css",
-    "style": "file:./style.css"
+    "editorScript": "file:./build/index.js",
+    "editorStyle": "file:./build/index.css",
+    "style": "file:./build/style-index.css"
   }
   

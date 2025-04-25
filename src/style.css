@@ -1,0 +1,51 @@
+.wp-block-ctsb-text-image-slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.wp-block-ctsb-text-image-slider .slider-container {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+}
+
+.wp-block-ctsb-text-image-slider .slide {
+    min-width: 100%;
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.wp-block-ctsb-text-image-slider .slide-content {
+    flex: 1;
+}
+
+.wp-block-ctsb-text-image-slider .slide-image {
+    flex: 1;
+}
+
+.wp-block-ctsb-text-image-slider .slide-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.wp-block-ctsb-text-image-slider .slider-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.wp-block-ctsb-text-image-slider .slider-button {
+    padding: 0.5rem 1rem;
+    background: #0073aa;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.wp-block-ctsb-text-image-slider .slider-button:hover {
+    background: #005177;
+} 

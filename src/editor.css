@@ -1,0 +1,36 @@
+.wp-block-ctsb-text-image-slider {
+    border: 1px dashed #ccc;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.wp-block-ctsb-text-image-slider .slide {
+    background: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.wp-block-ctsb-text-image-slider .slide-content {
+    padding: 1rem;
+}
+
+.wp-block-ctsb-text-image-slider .slide-image {
+    background: #eee;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wp-block-ctsb-text-image-slider .slide-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.wp-block-ctsb-text-image-slider .slider-controls {
+    background: #fff;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+} 
