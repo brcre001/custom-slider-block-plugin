@@ -1,26 +1,88 @@
 .wp-block-ctsb-text-image-slider {
-    border: 1px dashed #ccc;
-    padding: 1rem;
-    margin: 1rem 0;
+    padding: 20px;
+    background: #f0f0f0;
+    border: 1px dashed #999;
+    border-radius: 4px;
+    margin-bottom: 20px;
 }
 
-.wp-block-ctsb-text-image-slider .slide {
-    background: #f8f8f8;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+.wp-block-ctsb-text-image-slider .simple-block {
+    text-align: center;
+}
+
+.wp-block-ctsb-text-image-slider h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.wp-block-ctsb-text-image-slider p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.wp-block-ctsb-text-image-slider .slider-container {
+    position: relative;
+    border: 2px dashed #ccc;
     margin-bottom: 1rem;
 }
 
+.wp-block-ctsb-text-image-slider .slider-container.text-left {
+    flex-direction: column;
+}
+
+@media screen and (min-width: 960px) {
+    .wp-block-ctsb-text-image-slider .slider-container.text-left {
+        flex-direction: row;
+    }
+}
+
+.wp-block-ctsb-text-image-slider .slider-container.text-right {
+    flex-direction: row-reverse;
+}
+
 .wp-block-ctsb-text-image-slider .slide-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex: 1;
     padding: 1rem;
+    background: #fff;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.wp-block-ctsb-text-image-slider .slide-content::before {
+    content: "Slide Content";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 115, 170, 0.1);
+    padding: 4px 8px;
+    font-size: 12px;
+    color: #0073aa;
 }
 
 .wp-block-ctsb-text-image-slider .slide-image {
-    background: #eee;
+    position: relative;
+    flex: 1;
     min-height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 4px;
+    border: 1px dashed #ccc;
+}
+
+.wp-block-ctsb-text-image-slider .slide-image::before {
+    content: "Slide Image";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 115, 170, 0.1);
+    padding: 4px 8px;
+    font-size: 12px;
+    color: #0073aa;
 }
 
 .wp-block-ctsb-text-image-slider .slide-image img {
@@ -29,8 +91,54 @@
 }
 
 .wp-block-ctsb-text-image-slider .slider-controls {
-    background: #fff;
-    padding: 0.5rem;
-    border: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    padding-top: 1rem;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.wp-block-ctsb-text-image-slider .slider-button {
+    opacity: 0.7;
+    padding: 0.5rem 1rem;
+    background: #C00020;
+    color: white;
+    border: none;
+    cursor: pointer;
     border-radius: 4px;
+}
+
+.wp-block-ctsb-text-image-slider .slider-button:hover {
+    opacity: 1;
+}
+
+.wp-block-ctsb-text-image-slider .slider-button:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.wp-block-ctsb-text-image-slider .slide-counter {
+    font-size: 14px;
+    color: #666;
+    min-width: 60px;
+    text-align: center;
+}
+
+.wp-block-ctsb-text-image-slider .slide-editor {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #f0f0f0;
+    border-radius: 4px;
+}
+
+.wp-block-ctsb-text-image-slider .slide {
+    background: #fff;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    border: 1px solid #ddd;
 } 

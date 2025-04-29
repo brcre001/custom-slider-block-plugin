@@ -6,46 +6,118 @@
 
 .wp-block-ctsb-text-image-slider .slider-container {
     display: flex;
-    transition: transform 0.3s ease-in-out;
+    flex-direction: row;
+    gap: 2rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.wp-block-ctsb-text-image-slider .slider-container.text-left .slide {
+    flex-direction: row;
+}
+
+.wp-block-ctsb-text-image-slider .slider-container.text-right .slide {
+    flex-direction: row-reverse;
 }
 
 .wp-block-ctsb-text-image-slider .slide {
-    min-width: 100%;
-    display: flex;
-    gap: 2rem;
-    padding: 2rem;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    width: 100%;
 }
 
-.wp-block-ctsb-text-image-slider .slide-content {
-    flex: 1;
+.wp-block-ctsb-text-image-slider .slide.active {
+    display: flex;
+    opacity: 1;
 }
+
+
+.wp-block-ctsb-text-image-slider .slide-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    padding: 2rem;
+    width: calc(50% - 1rem);
+}
+
+.wp-block-ctsb-text-image-slider .slide-content h3 {
+    margin: 0 0 1rem;
+    font-size: 2rem;
+    color: #333;
+}
+
+.wp-block-ctsb-text-image-slider .slide-content p {
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #666;
+}
+
+.wp-block-ctsb-text-image-slider .slide-images-container {
+    width: calc(50% - 1rem);
+}
+
+
 
 .wp-block-ctsb-text-image-slider .slide-image {
     flex: 1;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
 .wp-block-ctsb-text-image-slider .slide-image img {
-    width: 100%;
+    max-width: 100%;
     height: auto;
     object-fit: cover;
 }
 
+.wp-block-ctsb-text-image-slider .placeholder-image {
+    color: #999;
+    font-size: 1.2rem;
+}
+
 .wp-block-ctsb-text-image-slider .slider-controls {
     display: flex;
+    align-items: center;
     justify-content: center;
     gap: 1rem;
     margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
 }
 
 .wp-block-ctsb-text-image-slider .slider-button {
     padding: 0.5rem 1rem;
-    background: #0073aa;
+    background: #C00020;
     color: white;
     border: none;
-    cursor: pointer;
     border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-size: 1.2rem;
+    line-height: 1;
 }
 
 .wp-block-ctsb-text-image-slider .slider-button:hover {
-    background: #005177;
+    background: #900018;
+}
+
+.wp-block-ctsb-text-image-slider .slide-counter {
+    font-size: 0.9rem;
+    color: #666;
+    min-width: 60px;
+    text-align: center;
+}
+
+.wp-block-ctsb-text-image-slider .slide-editor {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: #f0f0f0;
+    border-radius: 8px;
 } 
