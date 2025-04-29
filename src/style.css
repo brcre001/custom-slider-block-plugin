@@ -58,17 +58,24 @@
 
 .wp-block-ctsb-text-image-slider .slide-images-container {
     width: calc(50% - 1rem);
+    position: relative;
+    overflow: hidden;
 }
-
-
 
 .wp-block-ctsb-text-image-slider .slide-image {
     flex: 1;
     min-height: 300px;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.wp-block-ctsb-text-image-slider .slide-image.active {
+    display: flex;
+    opacity: 1;
 }
 
 .wp-block-ctsb-text-image-slider .slide-image img {

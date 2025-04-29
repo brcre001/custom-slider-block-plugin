@@ -41,6 +41,12 @@ function Edit({ attributes, setAttributes }) {
     const { slides = [], textOnLeft = true } = attributes;
     const [currentSlide, setCurrentSlide] = useState(0);
     
+    // Debug logs
+    console.log('Attributes:', attributes);
+    console.log('Slides:', slides);
+    console.log('Current Slide:', currentSlide);
+    console.log('Current Slide Data:', slides[currentSlide]);
+    
     const addSlide = () => {
         const newSlide = {
             id: slides.length + 1,
@@ -97,9 +103,9 @@ function Edit({ attributes, setAttributes }) {
                     </div>
                 </div>
                 <div className="slide-image">
-                    {slides[currentSlide].imageUrl ? (
+                    {slides && slides.length > 0 && slides[currentSlide] && slides[currentSlide].imageUrl ? (
                         <div className="image-container">
-                            <img src={slides[currentSlide].imageUrl} alt={slides[currentSlide].title} />
+                            <img src={slides[currentSlide].imageUrl} alt={attributes.title} />
                             <Button 
                                 className="delete-image-button"
                                 onClick={() => updateSlide(currentSlide, 'imageUrl', '')}
@@ -167,7 +173,7 @@ function Edit({ attributes, setAttributes }) {
 }
 
 function Save({ attributes }) {
-    const { slides, textOnLeft } = attributes;
+    const { slides, textOnLeft, title, description } = attributes;
     const blockProps = useBlockProps.save();
 
     return (
@@ -175,25 +181,25 @@ function Save({ attributes }) {
             <div className={`slider-container ${textOnLeft ? 'text-left' : 'text-right'}`}>
                 <div className="slide-content">
                     <div className="slide-content-inner">
-                        <RichText.Content tagName="h3" value={slides[0].title} />
-                        <RichText.Content tagName="p" value={slides[0].content} />
+                        <RichText.Content tagName="h3" value={title} />
+                        <RichText.Content tagName="p" value={description} />
                     </div>
                 </div>
                 <div className="slide-images-container">
                     {slides.map((slide, index) => (
                         <div key={slide.id} className={`slide-image ${index === 0 ? 'active' : ''}`}>
                             {slide.imageUrl ? (
-                                <img src={slide.imageUrl} alt={slide.title} />
+                                <img src={slide.imageUrl} alt={title} />
                             ) : (
                                 <div className="placeholder-image">Image Placeholder</div>
                             )}
                         </div>
                     ))}
-                    <div className="slider-controls">
-                        <button type="button" className="slider-button prev">←</button>
-                        <span className="slide-counter">1 / {slides.length}</span>
-                        <button type="button" className="slider-button next">→</button>
-                    </div>
+                </div>
+                <div className="slider-controls">
+                    <button type="button" className="slider-button prev">←</button>
+                    <span className="slide-counter">1 / {slides.length}</span>
+                    <button type="button" className="slider-button next">→</button>
                 </div>
             </div>
         </div>

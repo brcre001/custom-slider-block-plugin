@@ -4,8 +4,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "wp-scripts build",
-    "start": "wp-scripts start"
+    "build": "wp-scripts build --config webpack.config.js",
+    "start": "wp-scripts start --config webpack.config.js"
   },
   "keywords": [],
   "author": "",

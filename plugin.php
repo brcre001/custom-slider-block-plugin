@@ -36,12 +36,13 @@ add_action( 'enqueue_block_assets', 'ctsb_enqueue_block_assets' );
 
 // Enqueue frontend script
 function jra_custom_slider_block_enqueue_scripts() {
+    // Only enqueue if the block is used on the page
     if (has_block('ctsb/text-image-slider')) {
         wp_enqueue_script(
             'jra-custom-slider-block-frontend',
             plugins_url('build/frontend.js', __FILE__),
             array(),
-            '1.0.0',
+            filemtime(plugin_dir_path(__FILE__) . 'build/frontend.js'),
             true
         );
     }

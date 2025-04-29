@@ -19,10 +19,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const showSlide = (index) => {
             slideImages.forEach(slide => {
                 slide.classList.remove('active');
-                slide.style.display = 'none';
             });
             slideImages[index].classList.add('active');
-            slideImages[index].style.display = 'flex';
             currentSlide = index;
             updateCounter();
         };
